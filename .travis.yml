@@ -2,11 +2,6 @@ sudo: required
 services:
   - docker
 
-#env:
-  #global:
-   # - SHA=$(git rev-parse HEAD)
-    #- CLOUDSDK_CORE_DISABLE_PROMPTS=1
-
 before_install:
   - docker build -t adeyems/multi-docker-react-test -f ./client/Dockerfile.dev ./client
 
@@ -18,11 +13,9 @@ after_success:
   - docker build -t adeyems/multi-docker-nginx ./nginx
   - docker build -t adeyems/multi-docker-server ./server
   - docker build -t adeyems/multi-docker-worker  ./worker
-  -
-#login to docker
-- echo "$DOCKER_PWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-  #push the images to docker hub
+  - echo "$DOCKER_PWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
   - docker push adeyems/multi-docker-client
   - docker push adeyems/multi-docker-nginx
   - docker push adeyems/multi-docker-server
