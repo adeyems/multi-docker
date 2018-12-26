@@ -38,8 +38,3 @@ after_success:
   - docker push adeyems/multi-docker-worker
 
 
-deploy:
-  provider: script
-  script: bash ./deploy.sh
-  on:
-    branch: master
