@@ -23,12 +23,6 @@
       "memory": 128
     },
     {
-      "name": "client",
-      "image": "adeyems/multi-docker-client",
-      "hostname": "client",
-      "essential": false
-    },
-    {
       "name": "nginx",
       "image": "adeyems/multi-docker-nginx",
       "hostname": "nginx",
