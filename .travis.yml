@@ -21,5 +21,16 @@ after_success:
   - docker push adeyems/multi-docker-server
   - docker push adeyems/multi-docker-worker
 
-
+eploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "Multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-025917655592"
+  bucket_path: "Multi-docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
 
