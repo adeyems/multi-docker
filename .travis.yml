@@ -21,7 +21,7 @@ after_success:
   - docker push adeyems/multi-docker-server
   - docker push adeyems/multi-docker-worker
 
-eploy:
+deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "Multi-docker"
