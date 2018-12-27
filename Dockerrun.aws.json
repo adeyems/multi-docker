@@ -26,7 +26,6 @@
       "name": "nginx",
       "image": "adeyems/multi-docker-nginx",
       "hostname": "nginx",
-
       "essential": true,
       "portMappings":      [
         {
